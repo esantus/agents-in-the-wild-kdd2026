@@ -1,0 +1,264 @@
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue-dark:   #0d2240;
+  --blue-mid:    #1a3a6e;
+  --blue-accent: #2563eb;
+  --blue-light:  #dbeafe;
+  --gray-bg:     #f8fafc;
+  --gray-border: #e2e8f0;
+  --text:        #1e293b;
+  --text-muted:  #64748b;
+  --white:       #ffffff;
+  --max-width:   1100px;
+  --radius:      10px;
+  --shadow:      0 2px 12px rgba(0,0,0,.08);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--white);
+}
+
+a { color: var(--blue-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Layout helpers ─────────────────────────────────────────── */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section { padding: 4rem 0; }
+section.bg-light { background: var(--gray-bg); }
+
+h2 {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: 1.5rem;
+  padding-bottom: .5rem;
+  border-bottom: 3px solid var(--blue-accent);
+  display: inline-block;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--blue-mid);
+  margin-bottom: .25rem;
+}
+
+p { margin-bottom: .85rem; }
+p:last-child { margin-bottom: 0; }
+
+/* ── HEADER ─────────────────────────────────────────── */
+header {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+  color: var(--white);
+  padding: 4rem 1.5rem 3.5rem;
+  text-align: center;
+}
+
+.header-inner { max-width: var(--max-width); margin: 0 auto; }
+
+.venue-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 999px;
+  padding: .35rem 1.1rem;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+header h1 .subtitle {
+  font-weight: 300;
+  font-style: italic;
+  opacity: .9;
+}
+
+.paper-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: .6rem 1.5rem;
+  background: var(--blue-accent);
+  color: var(--white);
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: .9rem;
+  transition: background .2s;
+}
+.paper-btn:hover { background: #1d4ed8; text-decoration: none; }
+
+/* ── ABSTRACT ─────────────────────────────────────────── */
+#abstract p { font-size: 1.05rem; max-width: 860px; }
+
+/* ── TAKEAWAYS ─────────────────────────────────────────── */
+.takeaway-list {
+  list-style: none;
+  display: grid;
+  gap: .85rem;
+  max-width: 860px;
+}
+
+.takeaway-list li {
+  padding: .75rem 1rem .75rem 1.2rem;
+  border-left: 4px solid var(--blue-accent);
+  background: var(--white);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow);
+  font-size: .97rem;
+}
+
+/* ── PROGRAM ─────────────────────────────────────────── */
+.part { margin-bottom: 2.5rem; }
+.part:last-child { margin-bottom: 0; }
+
+.part > h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.topic-card {
+  display: flex;
+  gap: 1rem;
+  background: var(--gray-bg);
+  border: 1px solid var(--gray-border);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.topic-number {
+  flex-shrink: 0;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--blue-accent);
+  color: var(--white);
+  font-size: .8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topic-card strong { display: block; margin-bottom: .4rem; color: var(--blue-dark); font-size: .97rem; }
+.topic-card p { font-size: .88rem; color: var(--text-muted); margin: 0; }
+
+/* ── ORGANIZERS ─────────────────────────────────────────── */
+.organizer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.organizer-card {
+  background: var(--white);
+  border: 1px solid var(--gray-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: box-shadow .2s;
+}
+
+.organizer-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+
+.organizer-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: .15rem;
+}
+
+.affiliation {
+  display: block;
+  font-size: .83rem;
+  color: var(--text-muted);
+  margin-bottom: .35rem;
+}
+
+.email {
+  display: inline-block;
+  font-size: .82rem;
+  color: var(--blue-accent);
+  margin-bottom: .75rem;
+}
+
+.organizer-card p {
+  font-size: .87rem;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── KEYWORDS ─────────────────────────────────────────── */
+.keyword-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-top: .5rem;
+}
+
+.keyword-cloud span {
+  background: var(--blue-light);
+  color: var(--blue-mid);
+  padding: .35rem .85rem;
+  border-radius: 999px;
+  font-size: .85rem;
+  font-weight: 500;
+  border: 1px solid #bfdbfe;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+footer {
+  background: var(--blue-dark);
+  color: rgba(255,255,255,.75);
+  padding: 2.5rem 1.5rem;
+  font-size: .85rem;
+  line-height: 1.7;
+}
+
+footer .container { max-width: var(--max-width); margin: 0 auto; }
+footer a { color: #93c5fd; }
+footer a:hover { color: var(--white); }
+footer strong { color: var(--white); }
+footer em { font-style: italic; }
+footer .ack { margin-top: .75rem; opacity: .6; }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+  section { padding: 2.5rem 0; }
+  header { padding: 2.5rem 1rem 2rem; }
+  .topic-grid, .organizer-grid { grid-template-columns: 1fr; }
+}
