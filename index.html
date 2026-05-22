@@ -3,169 +3,238 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agents in the Wild: Where Research Meets Deployment — KDD 2026</title>
+  <title>Agents in the Wild — KDD 2026</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HERO -->
   <header>
-    <div class="header-inner">
-      <div class="venue-badge">KDD 2026 &middot; Tutorial &middot; August 9–13, 2026 &middot; Jeju Island, Republic of Korea</div>
-      <h1>Agents in the Wild:<br><span class="subtitle">Where Research Meets Deployment</span></h1>
-      <a class="paper-btn" href="https://doi.org/10.1145/3770855.3816449" target="_blank">ACM Paper &rarr;</a>
+    <canvas id="net"></canvas>
+    <div class="hero-content">
+      <div class="venue-badge">
+        <span class="dot"></span> KDD 2026 &nbsp;·&nbsp; Tutorial &nbsp;·&nbsp; August 9–13 &nbsp;·&nbsp; Jeju Island, Korea
+      </div>
+      <h1>
+        <span class="wild">Agents</span><br>
+        <span class="in-the">in the</span><br>
+        <span class="wild accent">Wild</span>
+      </h1>
+      <p class="tagline">Where Research Meets Deployment</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#organizers">Meet the Team</a>
+        <a class="btn-ghost" href="https://doi.org/10.1145/3770855.3816449" target="_blank">↗ ACM Paper</a>
+      </div>
     </div>
+    <div class="scroll-hint">scroll to explore ↓</div>
   </header>
 
   <main>
 
-    <!-- ABSTRACT -->
+    <!-- TERMINAL ABSTRACT -->
     <section id="abstract">
       <div class="container">
-        <h2>Abstract</h2>
-        <p>
-          Agentic systems — large language model (LLM)-based architectures capable of reasoning, planning, acting, and coordinating with tools and other agents — are rapidly transitioning from research prototypes to production-scale deployments across domains such as software engineering, scientific discovery, and finance. While academic work has emphasized benchmarks and algorithmic innovation, deployment raises new challenges around robustness, safety, and reliability.
-        </p>
-        <p>
-          This tutorial brings together researchers and practitioners to explore advances in reasoning and planning, multi-agent coordination, and evaluation, highlighting open challenges arising from deployment experience. Through applied case studies in pharmaceutical discovery and financial systems, we analyze common design patterns that make agentic systems successful, and discuss practical mitigation strategies for failure modes, such as verification pipelines, fallback mechanisms, and human-in-the-loop supervision. Attendees will gain a comprehensive view of the field along with concrete design patterns, evaluation checklists, and templates for safe and reliable deployment across industries.
-        </p>
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="t-dot red"></span>
+            <span class="t-dot yellow"></span>
+            <span class="t-dot green"></span>
+            <span class="t-title">abstract.md</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="prompt">$</span> <span class="cmd">cat abstract.md</span></p>
+            <p class="out">
+              Agentic systems — LLM-based architectures capable of reasoning, planning, acting, and coordinating with tools and other agents — are rapidly transitioning from <mark>research prototypes</mark> to <mark>production-scale deployments</mark> across software engineering, scientific discovery, and finance.
+            </p>
+            <p class="out">
+              This tutorial brings together researchers and practitioners to explore advances in reasoning and planning, multi-agent coordination, and evaluation — with a sharp focus on the messy, hard problems that only appear once agents leave the lab and enter <mark>the wild</mark>.
+            </p>
+            <p class="out">
+              Through case studies in pharmaceutical discovery and financial systems, we analyze common design patterns, and discuss practical mitigation strategies for failure modes: verification pipelines, fallback mechanisms, and human-in-the-loop supervision.
+            </p>
+            <p class="cursor-line"><span class="prompt">$</span><span class="cursor">▋</span></p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- TAKEAWAYS -->
-    <section id="takeaways" class="bg-light">
+    <section id="takeaways">
       <div class="container">
-        <h2>What You Will Learn</h2>
-        <ul class="takeaway-list">
-          <li>A clear understanding of the evolution of agentic systems — from single-LLM prompting to modular and multi-agent orchestration.</li>
-          <li>An introduction to modern reasoning, planning, and execution strategies, including their trade-offs and representative examples.</li>
-          <li>Evaluation techniques beyond static benchmarks, emphasizing robustness, reliability, safety, and continuous adaptation.</li>
-          <li>Concrete case studies from deployment domains (e.g., bioinformatics pipelines, financial assistants) illustrating common failure modes and effective recovery strategies.</li>
-          <li>Awareness of open research challenges and opportunities at the intersection of academic innovation and industrial practice.</li>
-        </ul>
+        <div class="section-label">What you'll learn</div>
+        <h2>Five Things You'll Take Home</h2>
+        <div class="takeaway-grid">
+          <div class="takeaway-card">
+            <div class="t-num">01</div>
+            <div class="t-text">The full arc — from single-LLM prompting to modular multi-agent orchestration — and <strong>why the shift happened</strong>.</div>
+          </div>
+          <div class="takeaway-card">
+            <div class="t-num">02</div>
+            <div class="t-text">Modern <strong>reasoning, planning, and execution strategies</strong> with honest trade-off comparisons.</div>
+          </div>
+          <div class="takeaway-card">
+            <div class="t-num">03</div>
+            <div class="t-text"><strong>Evaluation beyond benchmarks</strong> — robustness, reliability, safety, and continuous adaptation in production.</div>
+          </div>
+          <div class="takeaway-card">
+            <div class="t-num">04</div>
+            <div class="t-text">Concrete deployment <strong>case studies</strong> — hallucination, deadlocks, drift, cascading errors — and how teams survived them.</div>
+          </div>
+          <div class="takeaway-card">
+            <div class="t-num">05</div>
+            <div class="t-text">Open research frontiers at the intersection of <strong>academic innovation and industrial reality</strong>.</div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- PROGRAM -->
     <section id="program">
       <div class="container">
+        <div class="section-label">Schedule</div>
         <h2>Tutorial Program</h2>
 
-        <div class="part">
-          <h3>Part I &mdash; Foundations</h3>
-          <div class="topic-grid">
-            <div class="topic-card">
-              <span class="topic-number">3.1</span>
-              <div>
-                <strong>Agentic Systems: History and Definitions</strong>
-                <p>From single-model pipelines combining prompting, tool use, and heuristic control to modular, multi-agent architectures. The evolution of reasoning, planning, execution, and memory components.</p>
-              </div>
-            </div>
-            <div class="topic-card">
-              <span class="topic-number">3.2</span>
-              <div>
-                <strong>Agent Foundations: Reasoning, Planning &amp; Multi-Agent Coordination</strong>
-                <p>Task decomposition, multi-plan generation, iterative reflection, memory-augmented planning. Architectural topologies, communication protocols, and fault-tolerance mechanisms for teams of agents.</p>
-              </div>
-            </div>
-            <div class="topic-card">
-              <span class="topic-number">3.3</span>
-              <div>
-                <strong>Retrieval and Reasoning Pipelines</strong>
-                <p>Iterative, adaptive, and modular retrieval strategies that interleave reasoning and information lookup for multi-step, dynamic tasks.</p>
-              </div>
-            </div>
-            <div class="topic-card">
-              <span class="topic-number">3.4</span>
-              <div>
-                <strong>Evaluation Beyond Benchmarks</strong>
-                <p>Dynamic, behavior-centric evaluation frameworks. Scenario-driven robustness, behavioral safety, and trustworthiness. Concrete analyses of failure modes: hallucination, deadlocks, drift, and cascading errors.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="timeline">
+          <div class="tl-part-label">Part I — Foundations</div>
 
-        <div class="part">
-          <h3>Part II &mdash; Applied Perspectives</h3>
-          <div class="topic-grid">
-            <div class="topic-card">
-              <span class="topic-number">4.1</span>
-              <div>
-                <strong>Agents in Pharmaceutical and Life Sciences</strong>
-                <p>End-to-end autonomous scientific discovery spanning literature synthesis, hypothesis generation, and experimental validation. Multi-agent frameworks for drug candidate identification and biomedical discovery.</p>
-              </div>
-            </div>
-            <div class="topic-card">
-              <span class="topic-number">4.2</span>
-              <div>
-                <strong>Agents in Finance</strong>
-                <p>LLM-based agents evolving from static analytical tools to dynamic decision-support systems. Planner–executor–verifier architectures for earnings call summarization, portfolio allocation, and risk assessment.</p>
-              </div>
+          <div class="tl-item">
+            <div class="tl-marker">3.1</div>
+            <div class="tl-body">
+              <h3>Agentic Systems: History &amp; Definitions</h3>
+              <p>From single-model pipelines combining prompting, tool use, and heuristic control — to modular, multi-agent architectures where reasoning, planning, execution, and memory interlock.</p>
             </div>
           </div>
+
+          <div class="tl-item">
+            <div class="tl-marker">3.2</div>
+            <div class="tl-body">
+              <h3>Reasoning, Planning &amp; Multi-Agent Coordination</h3>
+              <p>Task decomposition, multi-plan generation, iterative reflection, memory-augmented planning. Architectural topologies — peer-to-peer, hierarchical — communication protocols, and fault-tolerance for agent teams.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-marker">3.3</div>
+            <div class="tl-body">
+              <h3>Retrieval and Reasoning Pipelines</h3>
+              <p>Iterative, adaptive, and modular retrieval strategies that interleave reasoning and information lookup for multi-step, dynamic, open-ended tasks.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-marker">3.4</div>
+            <div class="tl-body">
+              <h3>Evaluation Beyond Benchmarks</h3>
+              <p>Dynamic, behavior-centric frameworks. Scenario-driven robustness, behavioral safety, trustworthiness. Concrete analyses of hallucination, deadlocks, drift, and cascading errors — with mitigation playbooks.</p>
+            </div>
+          </div>
+
+          <div class="tl-part-label">Part II — Applied Perspectives</div>
+
+          <div class="tl-item">
+            <div class="tl-marker">4.1</div>
+            <div class="tl-body">
+              <h3>Agents in Pharmaceutical &amp; Life Sciences</h3>
+              <p>End-to-end autonomous scientific discovery spanning literature synthesis, hypothesis generation, and experimental validation. Multi-agent frameworks for drug candidate identification and biomedical discovery.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-marker">4.2</div>
+            <div class="tl-body">
+              <h3>Agents in Finance</h3>
+              <p>From static analytical tools to dynamic decision-support systems. Planner–executor–verifier architectures for earnings call summarization, portfolio allocation, and risk assessment.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
     <!-- ORGANIZERS -->
-    <section id="organizers" class="bg-light">
+    <section id="organizers">
       <div class="container">
+        <div class="section-label">The team</div>
         <h2>Organizers</h2>
-        <div class="organizer-grid">
+        <div class="org-grid">
 
-          <div class="organizer-card">
-            <div class="organizer-info">
-              <h3>Grace Hui Yang</h3>
-              <span class="affiliation">Georgetown University &mdash; Washington, D.C., USA</span>
-              <a class="email" href="mailto:grace.yang@georgetown.edu">grace.yang@georgetown.edu</a>
-              <p>Professor of Computer Science at Georgetown University, where she leads the InfoSense (Information Retrieval and Sense-Making) research group. Her research bridges information retrieval and NLP, with a focus on conversational AI agents, retrieval-augmented generation, and deep reinforcement learning for dialogue and reasoning. NSF CAREER Award recipient. General Co-Chair of SIGIR 2024; tutorials at SIGIR'14, WSDM'15, ICTIR'17, WSDM'18, WSDM'23, and SIGIR'23.</p>
+          <div class="org-card">
+            <div class="org-header">
+              <div class="org-avatar">GY</div>
+              <div>
+                <h3>Grace Hui Yang</h3>
+                <span class="org-affil">Georgetown University</span>
+                <span class="org-loc">Washington, D.C., USA</span>
+              </div>
             </div>
+            <p>Professor of Computer Science leading the InfoSense research group. NSF CAREER Award recipient. Research bridges information retrieval and NLP — conversational AI agents, retrieval-augmented generation, and deep RL for dialogue. General Co-Chair of SIGIR 2024.</p>
+            <a class="org-email" href="#" data-u="grace.yang" data-d="georgetown.edu" onclick="this.href='mailto:'+this.dataset.u+'@'+this.dataset.d">grace.yang [at] georgetown.edu</a>
           </div>
 
-          <div class="organizer-card">
-            <div class="organizer-info">
-              <h3>Pranav N. Venkit</h3>
-              <span class="affiliation">Salesforce &mdash; San Francisco, California, USA</span>
-              <a class="email" href="mailto:pnarayananvenkit@salesforce.com">pnarayananvenkit@salesforce.com</a>
-              <p>Research Scientist at Salesforce AI Research, contributing to the Interactive AI Team: building trustworthy, interactive agents capable of long-term reasoning, memory, and human–AI collaboration. Ph.D. in Informatics from Penn State (Best AI Dissertation Award). Research spans NLP, HCI, social informatics, and privacy; published in ACL, EMNLP, EACL, and FAccT.</p>
+          <div class="org-card">
+            <div class="org-header">
+              <div class="org-avatar">PV</div>
+              <div>
+                <h3>Pranav N. Venkit</h3>
+                <span class="org-affil">Salesforce</span>
+                <span class="org-loc">San Francisco, California, USA</span>
+              </div>
             </div>
+            <p>Research Scientist at Salesforce AI Research, building trustworthy interactive agents with long-term reasoning and memory. Ph.D. in Informatics from Penn State (Best AI Dissertation). Research spans NLP, HCI, social informatics, and privacy.</p>
+            <a class="org-email" href="#" data-u="pnarayananvenkit" data-d="salesforce.com" onclick="this.href='mailto:'+this.dataset.u+'@'+this.dataset.d">pnarayananvenkit [at] salesforce.com</a>
           </div>
 
-          <div class="organizer-card">
-            <div class="organizer-info">
-              <h3>Hooman Sedghamiz</h3>
-              <span class="affiliation">Bayer &mdash; San Diego, California, USA</span>
-              <a class="email" href="mailto:hooman.sedghamiz@bayer.com">hooman.sedghamiz@bayer.com</a>
-              <p>Sr. Director of AI/ML at Bayer AG, leading the development of enterprise-scale generative AI and agentic systems for precision medicine serving more than 100,000 employees globally. Co-Chair of the EMNLP 2023 GEM Industrial Track. Previously held research positions at UC San Diego and LivaNova. Published in EMNLP, BMC Systems Biology, and Frontiers journals; holds an international patent for medical device innovations (BioSigKit). M.Sc. in Biomedical Engineering from Linköping University.</p>
+          <div class="org-card">
+            <div class="org-header">
+              <div class="org-avatar">HS</div>
+              <div>
+                <h3>Hooman Sedghamiz</h3>
+                <span class="org-affil">Bayer</span>
+                <span class="org-loc">San Diego, California, USA</span>
+              </div>
             </div>
+            <p>Sr. Director of AI/ML at Bayer AG, leading enterprise-scale generative AI and agentic systems for precision medicine (100,000+ employees). Co-Chair EMNLP 2023 GEM Industrial Track. Published in EMNLP, BMC Systems Biology, Frontiers. International patent holder (BioSigKit).</p>
+            <a class="org-email" href="#" data-u="hooman.sedghamiz" data-d="bayer.com" onclick="this.href='mailto:'+this.dataset.u+'@'+this.dataset.d">hooman.sedghamiz [at] bayer.com</a>
           </div>
 
-          <div class="organizer-card">
-            <div class="organizer-info">
-              <h3>Enrico Santus</h3>
-              <span class="affiliation">Bloomberg &mdash; New York City, New York, USA</span>
-              <a class="email" href="mailto:esantus@bloomberg.net">esantus@bloomberg.net</a>
-              <p>Principal Technical Strategist for QUANT NLP and Academic Engagement at Bloomberg's Office of the CTO. Over 17 years of experience developing and leading AI products across technology, medicine, pharmaceuticals, fake news detection, and finance. Ph.D. in Computational Linguistics from The Hong Kong Polytechnic University; postdoctoral positions at SUTD and MIT. Author of over 70 conference and journal papers; invited to speak on NLP at the White House; co-authored two editions of AI and ML factsheets for the US Congress.</p>
+          <div class="org-card">
+            <div class="org-header">
+              <div class="org-avatar">ES</div>
+              <div>
+                <h3>Enrico Santus</h3>
+                <span class="org-affil">Bloomberg</span>
+                <span class="org-loc">New York City, New York, USA</span>
+              </div>
             </div>
+            <p>Principal Technical Strategist for QUANT NLP at Bloomberg's Office of the CTO. 17+ years building AI products across medicine, finance, and NLP. Ph.D. in Computational Linguistics (HKPolyU); postdoc at SUTD &amp; MIT. Invited to speak on NLP at the White House; co-authored AI/ML factsheets for the US Congress.</p>
+            <a class="org-email" href="#" data-u="esantus" data-d="bloomberg.net" onclick="this.href='mailto:'+this.dataset.u+'@'+this.dataset.d">esantus [at] bloomberg.net</a>
           </div>
 
-          <div class="organizer-card">
-            <div class="organizer-info">
-              <h3>Victor Dibia</h3>
-              <span class="affiliation">Microsoft &mdash; Seattle, Washington, USA</span>
-              <a class="email" href="mailto:victordibia@microsoft.com">victordibia@microsoft.com</a>
-              <p>Principal Research Software Engineer at Microsoft Research / Core AI. Key contributions include Magentic-UI (human-in-the-loop agentic systems), Magentic-One (a generalist multi-agent system), AutoGen Studio, LIDA (automated data visualization, ACL 2023), and metrics for evaluating candidate Copilot models. Previously Principal Research Engineer at Cloudera and Research Staff Member at IBM Research. Ph.D. in Information Systems from City University of Hong Kong; M.S. in Information Networking from Carnegie Mellon University.</p>
+          <div class="org-card">
+            <div class="org-header">
+              <div class="org-avatar">VD</div>
+              <div>
+                <h3>Victor Dibia</h3>
+                <span class="org-affil">Microsoft Research</span>
+                <span class="org-loc">Seattle, Washington, USA</span>
+              </div>
             </div>
+            <p>Principal Research Software Engineer at Microsoft Research / Core AI. Creator of Magentic-UI, Magentic-One, AutoGen Studio, and LIDA (ACL 2023). Ph.D. in Information Systems from City University of Hong Kong; M.S. from Carnegie Mellon University.</p>
+            <a class="org-email" href="#" data-u="victordibia" data-d="microsoft.com" onclick="this.href='mailto:'+this.dataset.u+'@'+this.dataset.d">victordibia [at] microsoft.com</a>
           </div>
 
-          <div class="organizer-card">
-            <div class="organizer-info">
-              <h3>Ioana Baldini</h3>
-              <span class="affiliation">Bloomberg &mdash; New York City, New York, USA</span>
-              <a class="email" href="mailto:ibaldinisoar@bloomberg.net">ibaldinisoar@bloomberg.net</a>
-              <p>Research Scientist on the AI Strategy &amp; Research team within Bloomberg's Office of the CTO, leading cross-functional collaborations to advance AI innovation. Former IBM Research career spanning NLP, cloud infrastructure, and runtime systems for heterogeneous architectures. NSERC Canada Graduate Scholarship, IBM Ph.D. Fellowship, Canada Google Anita Borg Scholarship, and IBM Research Division Award. Ph.D. and M.S. from the University of Toronto. Tutorials at KDD'24, AAAI'25, NAACL'25, and FAccT'25.</p>
+          <div class="org-card">
+            <div class="org-header">
+              <div class="org-avatar">IB</div>
+              <div>
+                <h3>Ioana Baldini</h3>
+                <span class="org-affil">Bloomberg</span>
+                <span class="org-loc">New York City, New York, USA</span>
+              </div>
             </div>
+            <p>Research Scientist on the AI Strategy &amp; Research team at Bloomberg's Office of the CTO. Former IBM Research career spanning NLP, cloud infrastructure, and heterogeneous computing. NSERC Graduate Scholarship, IBM Ph.D. Fellowship, Canada Google Anita Borg Scholarship. Ph.D. from the University of Toronto.</p>
+            <a class="org-email" href="#" data-u="ibaldinisoar" data-d="bloomberg.net" onclick="this.href='mailto:'+this.dataset.u+'@'+this.dataset.d">ibaldinisoar [at] bloomberg.net</a>
           </div>
 
         </div>
@@ -175,20 +244,17 @@
     <!-- KEYWORDS -->
     <section id="keywords">
       <div class="container">
-        <h2>Keywords</h2>
-        <div class="keyword-cloud">
+        <div class="kw-row">
           <span>Agentic Systems</span>
           <span>Large Language Models</span>
           <span>Multi-Agent Coordination</span>
           <span>Autonomous Workflows</span>
           <span>Agent Evaluation</span>
-          <span>Applied Agents</span>
-          <span>Multi-Agent Planning</span>
-          <span>Natural Language Generation</span>
-          <span>Information Extraction</span>
           <span>Robustness &amp; Safety</span>
           <span>Pharmaceutical Discovery</span>
           <span>Financial AI</span>
+          <span>Human-in-the-Loop</span>
+          <span>Reasoning &amp; Planning</span>
         </div>
       </div>
     </section>
@@ -197,12 +263,19 @@
 
   <footer>
     <div class="container">
-      <p>
-        <strong>ACM Reference:</strong> Grace Hui Yang, Pranav N. Venkit, Hooman Sedghamiz, Enrico Santus, Victor Dibia, and Ioana Baldini. 2026. Agents in the Wild: Where Research Meets Deployment. In <em>Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2 (KDD 2026)</em>, August 9–13, 2026, Jeju Island, Republic of Korea. ACM, New York, NY, USA, 5 pages. <a href="https://doi.org/10.1145/3770855.3816449" target="_blank">https://doi.org/10.1145/3770855.3816449</a>
-      </p>
-      <p class="ack">This work was supported by the U.S. National Science Foundation grant number IIS-2336768.</p>
+      <div class="footer-grid">
+        <div>
+          <p class="footer-title">Agents in the Wild</p>
+          <p class="footer-sub">KDD 2026 Tutorial · Jeju Island, Korea · August 9–13, 2026</p>
+        </div>
+        <div class="footer-cite">
+          <p><strong>Cite:</strong> Yang et al. 2026. Agents in the Wild: Where Research Meets Deployment. <em>KDD 2026</em>. <a href="https://doi.org/10.1145/3770855.3816449" target="_blank">doi:10.1145/3770855.3816449</a></p>
+          <p class="ack">Supported by NSF grant IIS-2336768.</p>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <script src="net.js"></script>
 </body>
 </html>
